@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -91,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 return JavaJoke.getJoke();
                 //return myApiService.sayHi(name).execute().getData();
             } catch (Exception e) {
-                return e.getMessage();
+                Log.i("Error Retrieving Jokes", e.getMessage());
+                return null;
             }
         }
 
